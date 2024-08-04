@@ -1,0 +1,29 @@
+@mixin Font($size,$weight,$family){
+    font: {
+        size: $size;
+        weight: $weight;
+        family: $family;
+    }
+}
+@mixin Color($color){
+    color: $color;
+}
+@mixin Position-center(){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+@mixin Breakpoint($breakpoint,$size){
+    @media only screen and (max-width: $breakpoint){
+        font: {
+            size: $size;
+        }
+    }
+}
+h3{
+    @include Font(30px,500,Arial);
+    @include Color(violet);
+    @include Position-center;
+    @include Breakpoint(992px,18px)
+}
